@@ -10,7 +10,7 @@ import SolutionSection from './components/SolutionSection'
 import FitSection from './components/FitSection'
 import TestimonialsSection from './components/TestimonialsSection'
 import FAQSection from './components/FAQSection'
-import LeadForm from './components/LeadForm'
+import ConversionSection from './components/ConversionSection'
 import Footer from './components/Footer'
 
 export default function App() {
@@ -38,7 +38,7 @@ export default function App() {
         <FitSection />
         <TestimonialsSection />
         <FAQSection />
-        <LeadForm isDark={isDark} />
+        <ConversionSection isDark={isDark} />
       </main>
 
       <Footer />
