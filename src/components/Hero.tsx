@@ -30,10 +30,9 @@ export default function Hero() {
   }
 
   const benefits = [
-    { title: 'Mehr Umsatz', text: 'KI-gestützte Produktberatung und Lead-Qualifizierung steigern Ihre Conversion Rates um bis zu 60%.' },
-    { title: 'Weniger Kosten', text: 'Automatisieren Sie 80% Ihrer Support-Anfragen und sparen Sie bis zu 60% Personalkosten.' },
-    { title: '24/7 Verfügbarkeit', text: 'Ihre Kunden erhalten jederzeit erstklassigen Service – auch am Wochenende und nachts.' },
-    { title: 'Zukunftssicher', text: 'Machen Sie Ihr Unternehmen immun gegen Fachkräftemangel und steigern Sie Ihre Wettbewerbsfähigkeit.' },
+    { title: 'Klarheit statt Chaos', text: 'Wissen, welche Prozesse sich zuerst lohnen – und welche Sie ignorieren können.' },
+    { title: 'Schutz vor Fehlentscheidungen', text: 'Keine teuren Tools oder Projekte ohne fundierte Diagnose. Erst verstehen, dann investieren.' },
+    { title: 'Konkrete Roadmap', text: 'Nach 90 Minuten wissen Sie, wo die echten Hebel in Ihrem Betrieb liegen – und was der nächste Schritt ist.' },
   ]
 
   return (
@@ -51,23 +50,23 @@ export default function Hero() {
           <div className="lg:max-w-[55%]">
             <div ref={labelRef} className="font-mono text-[11px] font-medium tracking-[0.1em] uppercase text-[#999] dark:text-[#666] mb-8 flex items-center gap-4">
               <div className="w-10 h-px bg-[#2563EB]" />
-              AI-Potenzialanalyse für KMU
+              Strategische Beratung für KMU
             </div>
 
             <h1
               ref={headlineRef}
-              className="font-heading text-[clamp(2rem,5vw,4rem)] font-extrabold leading-[1.08] tracking-[-0.03em] text-[#1A1A1A] dark:text-white mb-5"
+              className="font-heading text-[clamp(2rem,5vw,3.75rem)] font-extrabold leading-[1.08] tracking-[-0.03em] text-[#1A1A1A] dark:text-white mb-5"
             >
-              Skalieren Sie Ihr Business, ohne neue Mitarbeiter einzustellen: Die <span className="text-[#2563EB]">AI-Revolution</span> für KMU ist jetzt!
+              Bevor Sie Tausende Euro in die falsche Lösung stecken, sollten Sie wissen, wo der <span className="text-[#2563EB]">echte Hebel</span> liegt.
             </h1>
 
             <p ref={subRef} className="text-[clamp(0.95rem,1.1vw,1.15rem)] text-[#777] dark:text-[#999] leading-relaxed max-w-xl mb-8">
-              Entdecken Sie in nur 90 Minuten, wie Künstliche Intelligenz Ihre Prozesse automatisiert, Kosten senkt und den Umsatz steigert – mit unserer exklusiven AI-Potenzialanalyse.
+              Automiq ist kein Tool-Verkäufer. Wir sind der strategische Partner, der Ihnen in 90 Minuten zeigt, welche Prozesse in Ihrem Unternehmen wirklich automatisiert werden sollten – und welche nicht. Diagnose vor Umsetzung. Klarheit vor Investition.
             </p>
 
-            <div ref={benefitsRef} className="grid grid-cols-2 gap-4 mb-10">
+            <div ref={benefitsRef} className="flex flex-col gap-4 mb-10">
               {benefits.map((b) => (
-                <div key={b.title} className="bg-white/80 dark:bg-black/40 backdrop-blur-sm rounded-xl p-4 border border-[#EDEDEA] dark:border-white/10">
+                <div key={b.title} className="bg-white/80 dark:bg-black/40 backdrop-blur-sm rounded-xl p-5 border border-[#EDEDEA] dark:border-white/10">
                   <h3 className="font-heading text-sm font-semibold text-[#1A1A1A] dark:text-white mb-1">{b.title}</h3>
                   <p className="text-xs text-[#888] leading-relaxed">{b.text}</p>
                 </div>
@@ -76,10 +75,10 @@ export default function Hero() {
 
             <div ref={ctaRef} className="flex flex-wrap gap-4 pointer-events-auto">
               <button onClick={scrollToForm} className="btn-primary cursor-pointer">
-                Jetzt Analyse buchen
+                Potenzialanalyse für 250 € buchen
                 <ArrowRight size={16} />
               </button>
-              <a href="#solution" className="btn-outline backdrop-blur-sm">So funktioniert's</a>
+              <a href="#differenzierung" className="btn-outline backdrop-blur-sm">Warum nicht einfach eine Agency?</a>
             </div>
           </div>
         </div>

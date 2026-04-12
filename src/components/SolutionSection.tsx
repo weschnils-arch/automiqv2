@@ -3,18 +3,23 @@ import { useScrollReveal } from '../hooks/useScrollReveal'
 const steps = [
   {
     num: '01',
-    title: 'Ihre Potenzialanalyse (90 Min.)',
-    text: 'Wir analysieren Ihre aktuellen Workflows und identifizieren die größten Hebel für AI-Automatisierung in Ihrem Unternehmen. Sie erhalten einen konkreten Fahrplan mit messbaren KPIs.',
+    title: 'Vorgespräch & Vorbereitung',
+    text: 'Kurzes Briefing (15 Min.) zu Ihrem Geschäftsmodell, Ihren Engpässen und Zielen. Wir bereiten den Termin gezielt vor — kein Kaltstart.',
   },
   {
     num: '02',
-    title: 'Maßgeschneiderte Empfehlung',
-    text: 'Basierend auf der Analyse präsentieren wir Ihnen die optimale AI-Lösung – oft mit Qualimero, dem führenden Anbieter für digitale Mitarbeiter, der perfekt zu Ihren Bedürfnissen passt.',
+    title: 'Die Potenzialanalyse (90 Min.)',
+    text: 'Gemeinsam analysieren wir Ihre operativen Abläufe: Wo verlieren Sie Zeit? Wo liegt verstecktes Potenzial? Welche Prozesse lassen sich sinnvoll automatisieren — und welche nicht? Kein Tool-Pitch, sondern echte Diagnose.',
   },
   {
     num: '03',
-    title: 'Implementierung & Skalierung',
-    text: 'Wir begleiten Sie bei der nahtlosen Integration der AI-Lösung und stellen sicher, dass Sie sofort von den Vorteilen profitieren. Ihr Business wächst, Ihre Kosten sinken, Ihr Team wird entlastet.',
+    title: 'Ihr Audit-Bericht & Roadmap',
+    text: 'Sie erhalten einen schriftlichen Bericht mit klarer Priorisierung: Was sich zuerst lohnt, was warten kann, was Sie ignorieren sollten. Inklusive Kostenrahmen und realistischer Einschätzung.',
+  },
+  {
+    num: '04',
+    title: 'Umsetzung — optional, nicht Pflicht',
+    text: 'Wenn Sie möchten, begleiten wir die Umsetzung. Wenn nicht, haben Sie trotzdem eine fundierte Entscheidungsgrundlage — für jeden Anbieter.',
   },
 ]
 
@@ -28,11 +33,14 @@ export default function SolutionSection() {
         <div ref={headingRef} className="mb-14">
           <div className="font-mono text-[11px] font-medium tracking-[0.1em] uppercase text-[#999] dark:text-[#666] mb-4 flex items-center gap-3">
             <div className="w-8 h-px bg-[#2563EB]" />
-            Ihr Weg
+            So läuft es ab
           </div>
-          <h2 id="solution-heading" className="font-heading text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold leading-[1.1] tracking-[-0.02em] text-[#1A1A1A] dark:text-white">
-            Der einfache Weg zu Ihrem AI-Vorsprung: In 3 Schritten zur Transformation
+          <h2 id="solution-heading" className="font-heading text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold leading-[1.1] tracking-[-0.02em] text-[#1A1A1A] dark:text-white mb-4">
+            Vom Erstgespräch zur Klarheit — in vier konkreten Schritten.
           </h2>
+          <p className="text-[clamp(0.95rem,1.1vw,1.1rem)] text-[#777] dark:text-[#999] leading-[1.8] max-w-3xl">
+            Kein Verkaufsgespräch. Kein Tool-Pitch. Sondern ein strukturierter Prozess, der Ihnen echte Orientierung gibt.
+          </p>
         </div>
 
         <div ref={stepsRef}>

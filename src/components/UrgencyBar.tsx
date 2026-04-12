@@ -13,8 +13,8 @@ export default function UrgencyBar() {
   return (
     <div ref={barRef} className="fixed top-0 left-0 right-0 z-50 h-[40px] flex items-center justify-center bg-[#1A1A1A]">
       <p className="font-mono text-[11px] sm:text-xs font-medium tracking-wider text-white/90 uppercase px-4 text-center">
-        <span className="hidden sm:inline">Nur noch <span className="font-bold text-white">7</span> Plätze frei: Sichern Sie sich Ihre AI-Potenzialanalyse zum Sonderpreis!</span>
-        <span className="sm:hidden">Nur noch <span className="font-bold text-white">7</span> Plätze frei — Jetzt sichern!</span>
+        <span className="hidden sm:inline">Wer ohne Strategie einkauft, zahlt doppelt. <span className="font-bold text-white">Potenzialanalyse sichern →</span></span>
+        <span className="sm:hidden">Erst Klarheit, dann Umsetzung. <span className="font-bold text-white">Analyse sichern →</span></span>
       </p>
     </div>
   )

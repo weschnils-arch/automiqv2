@@ -4,7 +4,10 @@ import UrgencyBar from './components/UrgencyBar'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import ProblemSection from './components/ProblemSection'
+import AnalyseWertSection from './components/AnalyseWertSection'
+import DifferentiationSection from './components/DifferentiationSection'
 import SolutionSection from './components/SolutionSection'
+import FitSection from './components/FitSection'
 import TestimonialsSection from './components/TestimonialsSection'
 import LeadForm from './components/LeadForm'
 import Footer from './components/Footer'
@@ -28,7 +31,10 @@ export default function App() {
       <main>
         <Hero />
         <ProblemSection />
+        <AnalyseWertSection />
+        <DifferentiationSection />
         <SolutionSection />
+        <FitSection />
         <TestimonialsSection />
         <LeadForm isDark={isDark} />
       </main>
