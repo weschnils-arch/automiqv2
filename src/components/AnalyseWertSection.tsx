@@ -1,24 +1,29 @@
 import { useScrollReveal } from '../hooks/useScrollReveal'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, ScanSearch, Scale, Filter, Map, FileCheck } from 'lucide-react'
 
 const deliverables = [
   {
+    icon: ScanSearch,
     title: 'Strategischer Realitätscheck',
     text: 'Wo steht Ihr Unternehmen operativ? Welche Prozesse fressen am meisten Zeit, Geld und Nerven?',
   },
   {
+    icon: Scale,
     title: 'Unabhängige Diagnose',
     text: 'Keine Verkaufsagenda. Wir analysieren neutral, was Sinn macht — und was nicht. Auch wenn das bedeutet: nichts tun.',
   },
   {
+    icon: Filter,
     title: 'Filter gegen Fehlinvestitionen',
     text: 'Sie erfahren, welche Lösungen Sie nicht brauchen — bevor Sie Tausende Euro in das falsche Projekt stecken.',
   },
   {
+    icon: Map,
     title: 'Priorisierte Roadmap',
     text: 'Ein klarer Fahrplan: Was zuerst, was später, was gar nicht. Auf Basis von ROI, Aufwand und Ihrem Geschäftsmodell.',
   },
   {
+    icon: FileCheck,
     title: 'Entscheidungsgrundlage',
     text: 'Sie entscheiden danach selbst — ob mit Automiq, einem anderen Anbieter oder gar nicht. Die Analyse gehört Ihnen.',
   },
@@ -57,6 +62,9 @@ export default function AnalyseWertSection() {
                 i === deliverables.length - 1 && deliverables.length % 3 === 2 ? 'sm:col-span-2 lg:col-span-1' : ''
               }`}
             >
+              <div className="w-9 h-9 rounded-lg bg-[#2563EB]/10 flex items-center justify-center mb-4">
+                <d.icon size={18} className="text-[#2563EB]" />
+              </div>
               <h3 className="font-heading text-[15px] font-semibold text-[#1A1A1A] dark:text-white mb-2">{d.title}</h3>
               <p className="text-sm text-[#777] dark:text-[#999] leading-relaxed">{d.text}</p>
             </div>

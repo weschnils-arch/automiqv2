@@ -9,6 +9,7 @@ import DifferentiationSection from './components/DifferentiationSection'
 import SolutionSection from './components/SolutionSection'
 import FitSection from './components/FitSection'
 import TestimonialsSection from './components/TestimonialsSection'
+import FAQSection from './components/FAQSection'
 import LeadForm from './components/LeadForm'
 import Footer from './components/Footer'
 
@@ -36,6 +37,7 @@ export default function App() {
         <SolutionSection />
         <FitSection />
         <TestimonialsSection />
+        <FAQSection />
         <LeadForm isDark={isDark} />
       </main>
 

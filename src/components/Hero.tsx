@@ -1,6 +1,6 @@
 import { useEffect, useRef, lazy, Suspense } from 'react'
 import gsap from 'gsap'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Compass, ShieldCheck, Route } from 'lucide-react'
 
 const SplineRobot = lazy(() => import('./ui/SplineRobot'))
 
@@ -30,9 +30,9 @@ export default function Hero() {
   }
 
   const benefits = [
-    { title: 'Klarheit statt Chaos', text: 'Wissen, welche Prozesse sich zuerst lohnen – und welche Sie ignorieren können.' },
-    { title: 'Schutz vor Fehlentscheidungen', text: 'Keine teuren Tools oder Projekte ohne fundierte Diagnose. Erst verstehen, dann investieren.' },
-    { title: 'Konkrete Roadmap', text: 'Nach 90 Minuten wissen Sie, wo die echten Hebel in Ihrem Betrieb liegen – und was der nächste Schritt ist.' },
+    { icon: Compass, title: 'Klarheit statt Chaos', text: 'Wissen, welche Prozesse sich zuerst lohnen – und welche Sie ignorieren können.' },
+    { icon: ShieldCheck, title: 'Schutz vor Fehlentscheidungen', text: 'Keine teuren Tools oder Projekte ohne fundierte Diagnose. Erst verstehen, dann investieren.' },
+    { icon: Route, title: 'Konkrete Roadmap', text: 'Nach 90 Minuten wissen Sie, wo die echten Hebel in Ihrem Betrieb liegen – und was der nächste Schritt ist.' },
   ]
 
   return (
@@ -66,16 +66,21 @@ export default function Hero() {
 
             <div ref={benefitsRef} className="flex flex-col gap-4 mb-10">
               {benefits.map((b) => (
-                <div key={b.title} className="bg-white/80 dark:bg-black/40 backdrop-blur-sm rounded-xl p-5 border border-[#EDEDEA] dark:border-white/10">
-                  <h3 className="font-heading text-sm font-semibold text-[#1A1A1A] dark:text-white mb-1">{b.title}</h3>
-                  <p className="text-xs text-[#888] leading-relaxed">{b.text}</p>
+                <div key={b.title} className="bg-white/80 dark:bg-black/40 backdrop-blur-sm rounded-xl p-5 border border-[#EDEDEA] dark:border-white/10 flex gap-4">
+                  <div className="w-9 h-9 rounded-lg bg-[#2563EB]/10 flex items-center justify-center shrink-0">
+                    <b.icon size={18} className="text-[#2563EB]" />
+                  </div>
+                  <div>
+                    <h3 className="font-heading text-sm font-semibold text-[#1A1A1A] dark:text-white mb-1">{b.title}</h3>
+                    <p className="text-xs text-[#888] leading-relaxed">{b.text}</p>
+                  </div>
                 </div>
               ))}
             </div>
 
             <div ref={ctaRef} className="flex flex-wrap gap-4 pointer-events-auto">
               <button onClick={scrollToForm} className="btn-primary cursor-pointer">
-                Potenzialanalyse für 250 € buchen
+                Potenzialanalyse buchen
                 <ArrowRight size={16} />
               </button>
               <a href="#differenzierung" className="btn-outline backdrop-blur-sm">Warum nicht einfach eine Agency?</a>
