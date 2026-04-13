@@ -31,8 +31,8 @@ export default function App() {
 
       <main>
         <Hero />
-        <ProblemSection />
         <TestimonialsSection />
+        <ProblemSection />
         <AnalyseWertSection />
         <DifferentiationSection />
         <SolutionSection />
