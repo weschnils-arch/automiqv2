@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from 'react'
 import gsap from 'gsap'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 import Quiz from './conversion/Quiz'
-import QuizResult from './conversion/QuizResult'
+import FreebieForm from './conversion/FreebieForm'
 import ProductTabs from './conversion/ProductTabs'
 import type { ViewState, TabId, QuizResultData } from './conversion/types'
 
@@ -34,21 +34,21 @@ export default function ConversionSection({}: ConversionSectionProps) {
   const handleQuizComplete = (result: QuizResultData, answers: Record<string, string>) => {
     setQuizResult(result)
     setQuizAnswers(answers)
-    animateViewChange(() => setView('result'))
+    animateViewChange(() => setView('freebie'))
   }
 
   const handleSkip = () => {
     animateViewChange(() => setView('tabs'))
   }
 
-  const handleResultContinue = (tab: TabId) => {
+  const handleFreebieComplete = (tab: TabId) => {
     setActiveTab(tab)
     animateViewChange(() => setView('tabs'))
   }
 
   // Scroll to top of section when view changes
   useEffect(() => {
-    if (view === 'result' || view === 'tabs') {
+    if (view === 'freebie' || view === 'tabs') {
       const el = document.getElementById('lead-form')
       if (el) {
         setTimeout(() => {
@@ -69,12 +69,12 @@ export default function ConversionSection({}: ConversionSectionProps) {
           </div>
           <h2 id="conversion-heading" className="font-heading text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold leading-[1.1] tracking-[-0.02em] text-[#1A1A1A] dark:text-white mb-4">
             {view === 'quiz' && 'Finden Sie heraus, welcher Weg zu Ihnen passt.'}
-            {view === 'result' && 'Ihre persönliche Empfehlung.'}
+            {view === 'freebie' && 'Ihre kostenlose KI-Analyse.'}
             {view === 'tabs' && 'Wählen Sie den passenden Einstieg.'}
           </h2>
           {view === 'quiz' && (
             <p className="text-[clamp(0.95rem,1.1vw,1.1rem)] text-[#777] dark:text-[#999] leading-[1.8] max-w-2xl mx-auto">
-              5 kurze Fragen — dann wissen wir, welche Lösung am besten zu Ihrem Unternehmen passt.
+              5 kurze Fragen — dann erhalten Sie eine kostenlose PDF-Analyse mit 3 konkreten Hebeln für Ihr Unternehmen.
             </p>
           )}
         </div>
@@ -83,8 +83,12 @@ export default function ConversionSection({}: ConversionSectionProps) {
           {view === 'quiz' && (
             <Quiz onComplete={handleQuizComplete} onSkip={handleSkip} />
           )}
-          {view === 'result' && quizResult && (
-            <QuizResult result={quizResult} onContinue={handleResultContinue} />
+          {view === 'freebie' && quizResult && (
+            <FreebieForm
+              answers={quizAnswers}
+              result={quizResult}
+              onContinue={handleFreebieComplete}
+            />
           )}
           {view === 'tabs' && (
             <ProductTabs

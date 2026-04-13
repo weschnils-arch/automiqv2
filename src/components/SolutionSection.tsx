@@ -3,8 +3,8 @@ import { useScrollReveal } from '../hooks/useScrollReveal'
 const steps = [
   {
     num: '01',
-    title: 'Vorgespräch & Vorbereitung',
-    text: 'Kurzes Briefing (15 Min.) zu Ihrem Geschäftsmodell, Ihren Engpässen und Zielen. Wir bereiten den Termin gezielt vor — kein Kaltstart.',
+    title: 'Kostenloses KI-Quick-Audit',
+    text: 'Kurzes Quiz zu Ihrem Unternehmen — in 2 Minuten erhalten Sie eine individuelle PDF-Analyse mit 3 konkreten Hebeln, die Sie sofort umsetzen können. Inklusive kostenloser Tools und Tipps.',
   },
   {
     num: '02',

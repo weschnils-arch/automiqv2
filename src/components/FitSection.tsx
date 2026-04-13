@@ -2,7 +2,7 @@ import { useScrollReveal } from '../hooks/useScrollReveal'
 import { Check, X } from 'lucide-react'
 
 const fitFor = [
-  'Sie führen ein Service-Unternehmen mit 5–15 Mitarbeitern',
+  'Sie führen ein Unternehmen mit 5–50 Mitarbeitern',
   'Sie sind operativ eingebunden und haben keine Zeit für Recherche',
   'Wachstum erzeugt bei Ihnen mehr Chaos statt mehr Gewinn',
   'Sie wissen, dass Automatisierung wichtig wird — aber nicht, wo anfangen',

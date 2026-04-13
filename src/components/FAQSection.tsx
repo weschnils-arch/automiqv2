@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     question: 'Für welche Unternehmen ist die Analyse gedacht?',
-    answer: 'Für kleine Service-Unternehmen mit ca. 5–15 Mitarbeitern, deren Inhaber oder Geschäftsführer operativ eingebunden sind und wissen, dass Automatisierung wichtig wird — aber nicht, wo anfangen.',
+    answer: 'Für Unternehmen mit ca. 5–50 Mitarbeitern, deren Inhaber oder Geschäftsführer operativ eingebunden sind und wissen, dass Automatisierung wichtig wird — aber nicht, wo anfangen.',
   },
   {
     question: 'Was passiert, wenn die Analyse ergibt, dass ich noch nichts automatisieren sollte?',

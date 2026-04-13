@@ -1,7 +1,7 @@
 import type { LucideIcon } from 'lucide-react'
 
 export type TabId = 'potenzialanalyse' | 'wachstumsprogramm'
-export type ViewState = 'quiz' | 'result' | 'tabs'
+export type ViewState = 'quiz' | 'result' | 'freebie' | 'tabs'
 export type Recommendation = 'potenzialanalyse' | 'operate' | 'expand' | 'lead'
 
 export interface QuizOption {

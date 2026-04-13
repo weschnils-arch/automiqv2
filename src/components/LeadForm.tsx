@@ -71,7 +71,7 @@ export default function LeadForm({ isDark = false }: LeadFormProps) {
             ) : (
               <>
                 <h3 className="font-heading text-lg font-bold text-[#1A1A1A] dark:text-white mb-1">
-                  Potenzialanalyse buchen
+                  KI Potentialanalyse Starten
                 </h3>
                 <p className="text-sm text-[#999] mb-5">90 Minuten strategische Diagnose für Ihr Unternehmen.</p>
                 <form onSubmit={handleSubmit} className="space-y-4">

@@ -52,7 +52,7 @@ export default function PotenzialanalyseTab({ quizAnswers }: PotenzialanalyseTab
             onClick={() => setShowForm(true)}
             className="btn-primary w-full justify-center cursor-pointer"
           >
-            Potenzialanalyse buchen
+            KI Potentialanalyse Starten
             <ArrowRight size={16} />
           </button>
 

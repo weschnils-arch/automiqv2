@@ -80,7 +80,7 @@ export default function Hero() {
 
             <div ref={ctaRef} className="flex flex-wrap gap-4 pointer-events-auto">
               <button onClick={scrollToForm} className="btn-primary cursor-pointer">
-                Potenzialanalyse buchen
+                KI Potentialanalyse Starten
                 <ArrowRight size={16} />
               </button>
               <a href="#differenzierung" className="btn-outline backdrop-blur-sm">Warum nicht einfach eine Agency?</a>

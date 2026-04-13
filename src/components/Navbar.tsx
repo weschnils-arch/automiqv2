@@ -49,7 +49,7 @@ export default function Navbar({ isDark, onToggleTheme }: NavbarProps) {
             {isDark ? <Sun size={16} /> : <Moon size={16} />}
           </button>
           <button onClick={scrollToForm} className="btn-primary py-2 px-5 text-sm cursor-pointer">
-            Potenzialanalyse buchen
+            KI Potentialanalyse Starten
           </button>
         </div>
       </div>
