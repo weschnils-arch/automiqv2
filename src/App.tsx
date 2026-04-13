@@ -9,6 +9,7 @@ import DifferentiationSection from './components/DifferentiationSection'
 import SolutionSection from './components/SolutionSection'
 import FitSection from './components/FitSection'
 import TestimonialsSection from './components/TestimonialsSection'
+import ExpertSection from './components/ExpertSection'
 import FAQSection from './components/FAQSection'
 import ConversionSection from './components/ConversionSection'
 import Footer from './components/Footer'
@@ -36,6 +37,7 @@ export default function App() {
         <AnalyseWertSection />
         <DifferentiationSection />
         <SolutionSection />
+        <ExpertSection />
         <FitSection />
         <FAQSection />
         <ConversionSection isDark={isDark} />

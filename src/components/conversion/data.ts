@@ -134,7 +134,7 @@ export const timelineSteps: TimelineStep[] = [
 export const pricingTiers: PricingTierData[] = [
   {
     tier: 'Operate',
-    price: '4.990',
+    price: '1.990',
     period: '/ Monat',
     description: 'Ihr Einstieg in systematische Automatisierung',
     features: [
@@ -148,7 +148,7 @@ export const pricingTiers: PricingTierData[] = [
   },
   {
     tier: 'Expand',
-    price: '12.990',
+    price: '4.990',
     period: '/ Monat',
     description: 'Mehrere Bereiche gleichzeitig transformieren',
     recommended: true,
@@ -164,7 +164,7 @@ export const pricingTiers: PricingTierData[] = [
   },
   {
     tier: 'Lead',
-    price: '25.990',
+    price: '9.990',
     period: '/ Monat',
     description: 'Unternehmensweite KI-Strategie & Skalierung',
     features: [
