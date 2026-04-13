@@ -62,7 +62,7 @@ export default function LeadForm({ isDark = false }: LeadFormProps) {
           </div>
 
           {/* Right — Form */}
-          <div className="bg-[#FAFAF7] dark:bg-white/5 rounded-2xl p-6 sm:p-8 border border-[#EDEDEA] dark:border-white/10">
+          <div className="bg-[#F7F7F5] dark:bg-white/5 rounded-2xl p-6 sm:p-8 border border-[#EDEDEA] dark:border-white/10">
             {submitted ? (
               <div className="text-center py-8">
                 <p className="font-heading text-xl font-bold text-[#1A1A1A] dark:text-white mb-2">Anfrage erhalten.</p>

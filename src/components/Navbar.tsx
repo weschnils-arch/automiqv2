@@ -31,7 +31,7 @@ export default function Navbar({ isDark, onToggleTheme }: NavbarProps) {
       ref={navRef}
       className={`fixed top-[40px] left-0 right-0 z-40 transition-all duration-500 ${
         scrolled
-          ? 'bg-[#FAFAF7]/90 dark:bg-[#0A0A0A]/90 backdrop-blur-lg border-b border-[#EDEDEA] dark:border-[#222]'
+          ? 'bg-[#FFFFFF]/90 dark:bg-[#0A0A0A]/90 backdrop-blur-lg border-b border-[#EDEDEA] dark:border-[#222]'
           : 'bg-transparent'
       }`}
     >

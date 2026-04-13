@@ -28,7 +28,7 @@ export default function QuizQuestion({ question, selectedValue, onSelect }: Quiz
               className={`text-left rounded-xl p-5 border transition-all cursor-pointer ${
                 isSelected
                   ? 'border-[#2563EB] bg-[#2563EB]/5 dark:bg-[#2563EB]/10'
-                  : 'border-[#EDEDEA] dark:border-white/10 bg-[#FAFAF7] dark:bg-white/5 hover:border-[#2563EB]/30'
+                  : 'border-[#EDEDEA] dark:border-white/10 bg-[#F7F7F5] dark:bg-white/5 hover:border-[#2563EB]/30'
               }`}
             >
               <div className="flex gap-3 items-start">

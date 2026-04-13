@@ -58,7 +58,7 @@ export default function AnalyseWertSection() {
           {deliverables.map((d, i) => (
             <div
               key={d.title}
-              className={`bg-[#FAFAF7] dark:bg-white/5 rounded-xl p-6 border border-[#EDEDEA] dark:border-white/10 ${
+              className={`bg-[#F7F7F5] dark:bg-white/5 rounded-xl p-6 border border-[#EDEDEA] dark:border-white/10 ${
                 i === deliverables.length - 1 && deliverables.length % 3 === 2 ? 'sm:col-span-2 lg:col-span-1' : ''
               }`}
             >

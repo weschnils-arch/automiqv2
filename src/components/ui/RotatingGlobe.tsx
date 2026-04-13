@@ -76,7 +76,7 @@ export default function RotatingGlobe({ isDark = false }: RotatingGlobeProps) {
     let landFeatures: any
 
     const fgColor = isDark ? '#ffffff' : '#1A1A1A'
-    const bgColor = isDark ? '#0A0A0A' : '#FAFAF7'
+    const bgColor = isDark ? '#0A0A0A' : '#FFFFFF'
     const dotColor = isDark ? '#666666' : '#999999'
     const lineAlpha = isDark ? 0.2 : 0.15
 

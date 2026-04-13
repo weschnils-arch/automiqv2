@@ -16,7 +16,7 @@
 
   body {
     font-family: 'DM Sans', sans-serif;
-    background-color: #FAFAF7;
+    background-color: #FFFFFF;
     color: #1A1A1A;
     overflow-x: hidden;
   }
@@ -34,7 +34,7 @@
     width: 5px;
   }
   ::-webkit-scrollbar-track {
-    background: #FAFAF7;
+    background: #FFFFFF;
   }
   ::-webkit-scrollbar-thumb {
     background: #D4D4D0;

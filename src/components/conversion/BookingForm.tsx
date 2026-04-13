@@ -49,7 +49,7 @@ export default function BookingForm({ product, quizAnswers }: BookingFormProps) 
 
   return (
     <div ref={formRef} className="overflow-hidden">
-      <div className="bg-[#FAFAF7] dark:bg-white/5 rounded-2xl p-6 sm:p-8 border border-[#EDEDEA] dark:border-white/10 mt-6">
+      <div className="bg-[#F7F7F5] dark:bg-white/5 rounded-2xl p-6 sm:p-8 border border-[#EDEDEA] dark:border-white/10 mt-6">
         {submitted ? (
           <div className="text-center py-8">
             <p className="font-heading text-xl font-bold text-[#1A1A1A] dark:text-white mb-2">Anfrage erhalten.</p>

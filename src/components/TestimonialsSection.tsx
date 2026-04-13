@@ -37,7 +37,7 @@ export default function TestimonialsSection() {
 
         <div ref={cardsRef} className="grid md:grid-cols-3 gap-6">
           {testimonials.map((t) => (
-            <div key={t.tag} className="bg-[#FAFAF7] dark:bg-white/5 rounded-2xl p-7 border border-[#EDEDEA] dark:border-white/10 flex flex-col">
+            <div key={t.tag} className="bg-[#F7F7F5] dark:bg-white/5 rounded-2xl p-7 border border-[#EDEDEA] dark:border-white/10 flex flex-col">
               <div className="font-mono text-[10px] font-medium tracking-wider uppercase text-[#2563EB] mb-4">{t.tag}</div>
               <p className="text-[15px] text-[#555] dark:text-[#AAA] leading-relaxed italic mb-6 flex-1">
                 &bdquo;{t.quote}&ldquo;
