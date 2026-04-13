@@ -32,11 +32,11 @@ export default function App() {
       <main>
         <Hero />
         <ProblemSection />
+        <TestimonialsSection />
         <AnalyseWertSection />
         <DifferentiationSection />
         <SolutionSection />
         <FitSection />
-        <TestimonialsSection />
         <FAQSection />
         <ConversionSection isDark={isDark} />
       </main>
