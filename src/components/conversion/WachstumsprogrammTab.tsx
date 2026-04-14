@@ -1,7 +1,8 @@
 import { useState } from 'react'
+import { useLanguage } from '../../i18n/LanguageContext'
 import PricingCard from './PricingCard'
 import BookingForm from './BookingForm'
-import { pricingTiers } from './data'
+import { usePricingTiers } from './data'
 
 interface WachstumsprogrammTabProps {
   quizAnswers?: Record<string, string>
@@ -9,11 +10,13 @@ interface WachstumsprogrammTabProps {
 
 export default function WachstumsprogrammTab({ quizAnswers }: WachstumsprogrammTabProps) {
   const [selectedProduct, setSelectedProduct] = useState<string | null>(null)
+  const { t } = useLanguage()
+  const pricingTiers = usePricingTiers()
 
   return (
     <div>
       <p className="text-[clamp(0.95rem,1.1vw,1.1rem)] text-[#777] dark:text-[#999] leading-[1.8] mb-10 max-w-2xl">
-        Nach der Potenzialanalyse geht es weiter. Festes Team. Laufend neue Use Cases. Monatliche Ergebnisberichte. Ihr Unternehmen wird systematisch effizienter — nicht als Projekt, sondern als Standard.
+        {t('wachstumIntro')}
       </p>
 
       <div className="grid md:grid-cols-3 gap-6">

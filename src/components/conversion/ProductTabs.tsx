@@ -1,5 +1,6 @@
 import { useRef, useEffect } from 'react'
 import gsap from 'gsap'
+import { useLanguage } from '../../i18n/LanguageContext'
 import PotenzialanalyseTab from './PotenzialanalyseTab'
 import WachstumsprogrammTab from './WachstumsprogrammTab'
 import type { TabId } from './types'
@@ -10,14 +11,15 @@ interface ProductTabsProps {
   quizAnswers?: Record<string, string>
 }
 
-const tabs: { id: TabId; label: string }[] = [
-  { id: 'potenzialanalyse', label: 'Potenzialanalyse' },
-  { id: 'wachstumsprogramm', label: 'KI-Wachstumsprogramm' },
-]
-
 export default function ProductTabs({ activeTab, onTabChange, quizAnswers }: ProductTabsProps) {
   const contentRef = useRef<HTMLDivElement>(null)
   const prevTab = useRef(activeTab)
+  const { t } = useLanguage()
+
+  const tabs: { id: TabId; labelKey: 'tabPotenzialanalyse' | 'tabWachstumsprogramm' }[] = [
+    { id: 'potenzialanalyse', labelKey: 'tabPotenzialanalyse' },
+    { id: 'wachstumsprogramm', labelKey: 'tabWachstumsprogramm' },
+  ]
 
   useEffect(() => {
     if (prevTab.current === activeTab) return
@@ -49,7 +51,7 @@ export default function ProductTabs({ activeTab, onTabChange, quizAnswers }: Pro
                   : 'text-[#999] dark:text-[#666] hover:text-[#555] dark:hover:text-[#999]'
               }`}
             >
-              {tab.label}
+              {t(tab.labelKey)}
             </button>
           ))}
         </div>

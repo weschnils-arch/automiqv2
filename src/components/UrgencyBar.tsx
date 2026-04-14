@@ -1,8 +1,10 @@
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
+import { useLanguage } from '../i18n/LanguageContext'
 
 export default function UrgencyBar() {
   const barRef = useRef<HTMLDivElement>(null)
+  const { t } = useLanguage()
 
   useEffect(() => {
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -13,8 +15,8 @@ export default function UrgencyBar() {
   return (
     <div ref={barRef} className="fixed top-0 left-0 right-0 z-50 h-[40px] flex items-center justify-center bg-[#1A1A1A]">
       <p className="font-mono text-[11px] sm:text-xs font-medium tracking-wider text-white/90 uppercase px-4 text-center">
-        <span className="hidden sm:inline">Wer ohne Strategie einkauft, zahlt doppelt. <span className="font-bold text-white">Potenzialanalyse sichern →</span></span>
-        <span className="sm:hidden">Erst Klarheit, dann Umsetzung. <span className="font-bold text-white">Analyse sichern →</span></span>
+        <span className="hidden sm:inline">{t('urgencyDesktop')} <span className="font-bold text-white">{t('urgencyDesktopCta')}</span></span>
+        <span className="sm:hidden">{t('urgencyMobile')} <span className="font-bold text-white">{t('urgencyMobileCta')}</span></span>
       </p>
     </div>
   )

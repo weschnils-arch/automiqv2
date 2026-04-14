@@ -1,3 +1,4 @@
+import { useLanguage } from '../../i18n/LanguageContext'
 import type { TimelineStep } from './types'
 
 interface ProcessTimelineProps {
@@ -5,6 +6,8 @@ interface ProcessTimelineProps {
 }
 
 export default function ProcessTimeline({ steps }: ProcessTimelineProps) {
+  const { t } = useLanguage()
+
   return (
     <div className="space-y-0">
       {steps.map((step, i) => (
@@ -22,7 +25,7 @@ export default function ProcessTimeline({ steps }: ProcessTimelineProps) {
           {/* Right: text */}
           <div className="pb-8">
             <div className="font-mono text-[10px] font-medium tracking-wider uppercase text-[#999] dark:text-[#666] mb-1">
-              Schritt {step.number}
+              {t('timelineStep')} {step.number}
             </div>
             <h4 className="font-heading text-[15px] font-semibold text-[#1A1A1A] dark:text-white mb-1">
               {step.title}

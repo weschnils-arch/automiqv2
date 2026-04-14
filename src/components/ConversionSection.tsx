@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import gsap from 'gsap'
 import { useScrollReveal } from '../hooks/useScrollReveal'
+import { useLanguage } from '../i18n/LanguageContext'
 import Quiz from './conversion/Quiz'
 import FreebieForm from './conversion/FreebieForm'
 import ProductTabs from './conversion/ProductTabs'
@@ -15,6 +16,7 @@ export default function ConversionSection({}: ConversionSectionProps) {
   const [activeTab, setActiveTab] = useState<TabId>('potenzialanalyse')
   const [quizResult, setQuizResult] = useState<QuizResultData | null>(null)
   const [quizAnswers, setQuizAnswers] = useState<Record<string, string>>({})
+  const { t } = useLanguage()
 
   const sectionRef = useScrollReveal<HTMLElement>()
   const viewRef = useRef<HTMLDivElement>(null)
@@ -64,17 +66,17 @@ export default function ConversionSection({}: ConversionSectionProps) {
         <div className="text-center mb-14">
           <div className="font-mono text-[11px] font-medium tracking-[0.1em] uppercase text-[#999] dark:text-[#666] mb-4 flex items-center justify-center gap-3">
             <div className="w-8 h-px bg-[#2563EB]" />
-            Ihr nächster Schritt
+            {t('conversionLabel')}
             <div className="w-8 h-px bg-[#2563EB]" />
           </div>
           <h2 id="conversion-heading" className="font-heading text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold leading-[1.1] tracking-[-0.02em] text-[#1A1A1A] dark:text-white mb-4">
-            {view === 'quiz' && 'Finden Sie heraus, welcher Weg zu Ihnen passt.'}
-            {view === 'freebie' && 'Ihre kostenlose KI-Analyse.'}
-            {view === 'tabs' && 'Wählen Sie den passenden Einstieg.'}
+            {view === 'quiz' && t('conversionQuizHeading')}
+            {view === 'freebie' && t('conversionFreebieHeading')}
+            {view === 'tabs' && t('conversionTabsHeading')}
           </h2>
           {view === 'quiz' && (
             <p className="text-[clamp(0.95rem,1.1vw,1.1rem)] text-[#777] dark:text-[#999] leading-[1.8] max-w-2xl mx-auto">
-              5 kurze Fragen — dann erhalten Sie eine kostenlose PDF-Analyse mit 3 konkreten Hebeln für Ihr Unternehmen.
+              {t('conversionQuizSub')}
             </p>
           )}
         </div>

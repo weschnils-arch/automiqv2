@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Moon, Sun } from 'lucide-react'
 import gsap from 'gsap'
+import { useLanguage } from '../i18n/LanguageContext'
 
 interface NavbarProps {
   isDark: boolean
@@ -10,6 +11,7 @@ interface NavbarProps {
 export default function Navbar({ isDark, onToggleTheme }: NavbarProps) {
   const navRef = useRef<HTMLElement>(null)
   const [scrolled, setScrolled] = useState(false)
+  const { lang, setLang, t } = useLanguage()
 
   useEffect(() => {
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -41,6 +43,25 @@ export default function Navbar({ isDark, onToggleTheme }: NavbarProps) {
         </a>
 
         <div className="flex items-center gap-3">
+          {/* Language toggle */}
+          <div className="flex items-center bg-[#F0F0EB] dark:bg-white/10 rounded-lg overflow-hidden">
+            <button
+              onClick={() => setLang('de')}
+              className={`px-2.5 py-1.5 text-[11px] font-mono font-semibold tracking-wide cursor-pointer transition-colors ${
+                lang === 'de' ? 'bg-[#2563EB] text-white' : 'text-[#999] hover:text-[#1A1A1A] dark:hover:text-white'
+              }`}
+            >
+              DE
+            </button>
+            <button
+              onClick={() => setLang('en')}
+              className={`px-2.5 py-1.5 text-[11px] font-mono font-semibold tracking-wide cursor-pointer transition-colors ${
+                lang === 'en' ? 'bg-[#2563EB] text-white' : 'text-[#999] hover:text-[#1A1A1A] dark:hover:text-white'
+              }`}
+            >
+              EN
+            </button>
+          </div>
           <button
             onClick={onToggleTheme}
             className="w-9 h-9 rounded-xl flex items-center justify-center text-[#999] hover:text-[#1A1A1A] dark:hover:text-white hover:bg-[#F0F0EB] dark:hover:bg-white/10 transition-colors cursor-pointer"
@@ -49,7 +70,7 @@ export default function Navbar({ isDark, onToggleTheme }: NavbarProps) {
             {isDark ? <Sun size={16} /> : <Moon size={16} />}
           </button>
           <button onClick={scrollToForm} className="btn-primary py-2 px-5 text-sm cursor-pointer">
-            KI Potentialanalyse Starten
+            {t('navCta')}
           </button>
         </div>
       </div>

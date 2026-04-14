@@ -1,6 +1,7 @@
 import { useEffect, useRef, lazy, Suspense } from 'react'
 import gsap from 'gsap'
 import { ArrowRight, Compass, ShieldCheck, Route } from 'lucide-react'
+import { useLanguage } from '../i18n/LanguageContext'
 
 const SplineRobot = lazy(() => import('./ui/SplineRobot'))
 
@@ -10,6 +11,7 @@ export default function Hero() {
   const subRef = useRef<HTMLParagraphElement>(null)
   const benefitsRef = useRef<HTMLDivElement>(null)
   const ctaRef = useRef<HTMLDivElement>(null)
+  const { t } = useLanguage()
 
   useEffect(() => {
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -30,9 +32,9 @@ export default function Hero() {
   }
 
   const benefits = [
-    { icon: Compass, title: 'Klarheit statt Chaos', text: 'Wissen, welche Prozesse sich zuerst lohnen – und welche Sie ignorieren können.' },
-    { icon: ShieldCheck, title: 'Schutz vor Fehlentscheidungen', text: 'Keine teuren Tools oder Projekte ohne fundierte Diagnose. Erst verstehen, dann investieren.' },
-    { icon: Route, title: 'Konkrete Roadmap', text: 'Nach 90 Minuten wissen Sie, wo die echten Hebel in Ihrem Betrieb liegen – und was der nächste Schritt ist.' },
+    { icon: Compass, titleKey: 'heroBenefit1Title' as const, textKey: 'heroBenefit1Text' as const },
+    { icon: ShieldCheck, titleKey: 'heroBenefit2Title' as const, textKey: 'heroBenefit2Text' as const },
+    { icon: Route, titleKey: 'heroBenefit3Title' as const, textKey: 'heroBenefit3Text' as const },
   ]
 
   return (
@@ -50,29 +52,29 @@ export default function Hero() {
           <div className="lg:max-w-[55%]">
             <div ref={labelRef} className="font-mono text-[11px] font-medium tracking-[0.1em] uppercase text-[#999] dark:text-[#666] mb-8 flex items-center gap-4">
               <div className="w-10 h-px bg-[#2563EB]" />
-              Strategische Beratung für KMU
+              {t('heroLabel')}
             </div>
 
             <h1
               ref={headlineRef}
               className="font-heading text-[clamp(2rem,5vw,3.75rem)] font-extrabold leading-[1.08] tracking-[-0.03em] text-[#1A1A1A] dark:text-white mb-5"
             >
-              Bevor Sie Tausende Euro in die falsche Lösung stecken, sollten Sie wissen, wo der <span className="text-[#2563EB]">echte Hebel</span> liegt.
+              {t('heroHeadlinePre')} <span className="text-[#2563EB]">{t('heroHeadlineHighlight')}</span> {t('heroHeadlinePost')}
             </h1>
 
             <p ref={subRef} className="text-[clamp(0.95rem,1.1vw,1.15rem)] text-[#777] dark:text-[#999] leading-relaxed max-w-xl mb-8">
-              Automiq ist kein Tool-Verkäufer. Wir sind der strategische Partner, der Ihnen in 90 Minuten zeigt, welche Prozesse in Ihrem Unternehmen wirklich automatisiert werden sollten – und welche nicht. Diagnose vor Umsetzung. Klarheit vor Investition.
+              {t('heroSub')}
             </p>
 
             <div ref={benefitsRef} className="flex flex-col gap-4 mb-10">
               {benefits.map((b) => (
-                <div key={b.title} className="bg-white/80 dark:bg-black/40 backdrop-blur-sm rounded-xl p-5 border border-[#EDEDEA] dark:border-white/10 flex gap-4">
+                <div key={b.titleKey} className="bg-white/80 dark:bg-black/40 backdrop-blur-sm rounded-xl p-5 border border-[#EDEDEA] dark:border-white/10 flex gap-4">
                   <div className="w-9 h-9 rounded-lg bg-[#2563EB]/10 flex items-center justify-center shrink-0">
                     <b.icon size={18} className="text-[#2563EB]" />
                   </div>
                   <div>
-                    <h3 className="font-heading text-sm font-semibold text-[#1A1A1A] dark:text-white mb-1">{b.title}</h3>
-                    <p className="text-xs text-[#888] leading-relaxed">{b.text}</p>
+                    <h3 className="font-heading text-sm font-semibold text-[#1A1A1A] dark:text-white mb-1">{t(b.titleKey)}</h3>
+                    <p className="text-xs text-[#888] leading-relaxed">{t(b.textKey)}</p>
                   </div>
                 </div>
               ))}
@@ -80,10 +82,10 @@ export default function Hero() {
 
             <div ref={ctaRef} className="flex flex-wrap gap-4 pointer-events-auto">
               <button onClick={scrollToForm} className="btn-primary cursor-pointer">
-                KI Potentialanalyse Starten
+                {t('heroCta')}
                 <ArrowRight size={16} />
               </button>
-              <a href="#differenzierung" className="btn-outline backdrop-blur-sm">Warum nicht einfach eine Agency?</a>
+              <a href="#differenzierung" className="btn-outline backdrop-blur-sm">{t('heroSecondary')}</a>
             </div>
           </div>
         </div>

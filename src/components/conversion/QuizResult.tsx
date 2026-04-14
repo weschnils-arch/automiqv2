@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { ArrowRight, CheckCircle2 } from 'lucide-react'
 import gsap from 'gsap'
+import { useLanguage } from '../../i18n/LanguageContext'
 import type { QuizResultData, TabId } from './types'
 
 interface QuizResultProps {
@@ -10,6 +11,7 @@ interface QuizResultProps {
 
 export default function QuizResult({ result, onContinue }: QuizResultProps) {
   const cardRef = useRef<HTMLDivElement>(null)
+  const { t } = useLanguage()
 
   useEffect(() => {
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -25,7 +27,7 @@ export default function QuizResult({ result, onContinue }: QuizResultProps) {
         </div>
 
         <div className="font-mono text-[11px] font-medium tracking-wider uppercase text-[#999] dark:text-[#666] mb-3">
-          Unsere Empfehlung für Sie
+          {t('resultLabel')}
         </div>
 
         <h3 className="font-heading text-xl font-bold text-[#1A1A1A] dark:text-white mb-3">
@@ -40,7 +42,7 @@ export default function QuizResult({ result, onContinue }: QuizResultProps) {
           onClick={() => onContinue(result.targetTab)}
           className="btn-primary cursor-pointer mx-auto"
         >
-          Angebot ansehen
+          {t('resultViewOffer')}
           <ArrowRight size={16} />
         </button>
       </div>

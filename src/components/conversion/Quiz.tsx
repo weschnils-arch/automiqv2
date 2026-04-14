@@ -2,7 +2,8 @@ import { useState, useRef, useEffect } from 'react'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
 import gsap from 'gsap'
 import QuizQuestion from './QuizQuestion'
-import { quizQuestions, calculateQuizResult } from './data'
+import { useQuizQuestions, calculateQuizResult } from './data'
+import { useLanguage } from '../../i18n/LanguageContext'
 import type { QuizResultData } from './types'
 
 interface QuizProps {
@@ -14,7 +15,9 @@ export default function Quiz({ onComplete, onSkip }: QuizProps) {
   const [currentStep, setCurrentStep] = useState(0)
   const [answers, setAnswers] = useState<Record<string, string>>({})
   const questionRef = useRef<HTMLDivElement>(null)
+  const { t, lang } = useLanguage()
 
+  const quizQuestions = useQuizQuestions()
   const totalSteps = quizQuestions.length
   const currentQuestion = quizQuestions[currentStep]
   const currentAnswer = answers[currentQuestion.id] || ''
@@ -44,7 +47,7 @@ export default function Quiz({ onComplete, onSkip }: QuizProps) {
     if (!currentAnswer) return
     if (currentStep === totalSteps - 1) {
       const finalAnswers = { ...answers, [currentQuestion.id]: currentAnswer }
-      const result = calculateQuizResult(finalAnswers)
+      const result = calculateQuizResult(finalAnswers, lang)
       onComplete(result, finalAnswers)
       return
     }
@@ -68,7 +71,7 @@ export default function Quiz({ onComplete, onSkip }: QuizProps) {
         {/* Progress bar */}
         <div className="flex items-center justify-between mb-6">
           <span className="font-mono text-[11px] font-medium tracking-wider uppercase text-[#999] dark:text-[#666]">
-            Schritt {currentStep + 1} von {totalSteps}
+            {t('quizStep')} {currentStep + 1} {t('quizStepOf')} {totalSteps}
           </span>
           <div className="flex-1 ml-4 h-1 bg-[#EDEDEA] dark:bg-white/10 rounded-full overflow-hidden">
             <div
@@ -98,7 +101,7 @@ export default function Quiz({ onComplete, onSkip }: QuizProps) {
             }`}
           >
             <ArrowLeft size={14} />
-            Zurück
+            {t('quizBack')}
           </button>
           <button
             type="button"
@@ -108,7 +111,7 @@ export default function Quiz({ onComplete, onSkip }: QuizProps) {
               !currentAnswer ? 'opacity-30 pointer-events-none' : ''
             }`}
           >
-            {currentStep === totalSteps - 1 ? 'Auswertung' : 'Weiter'}
+            {currentStep === totalSteps - 1 ? t('quizEvaluate') : t('quizNext')}
             <ArrowRight size={14} />
           </button>
         </div>
@@ -120,7 +123,7 @@ export default function Quiz({ onComplete, onSkip }: QuizProps) {
         onClick={onSkip}
         className="block mx-auto mt-5 text-xs text-[#999] dark:text-[#666] hover:text-[#555] dark:hover:text-[#999] transition-colors underline underline-offset-2 decoration-[#DDD] dark:decoration-[#333] cursor-pointer"
       >
-        Direkt zu den Angeboten →
+        {t('quizSkip')}
       </button>
     </div>
   )

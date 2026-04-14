@@ -1,4 +1,5 @@
 import { Check } from 'lucide-react'
+import { useLanguage } from '../../i18n/LanguageContext'
 import type { PricingTierData } from './types'
 
 interface PricingCardProps extends PricingTierData {
@@ -6,6 +7,8 @@ interface PricingCardProps extends PricingTierData {
 }
 
 export default function PricingCard({ tier, price, period, description, features, recommended, ctaLabel, onCta }: PricingCardProps) {
+  const { t } = useLanguage()
+
   return (
     <div
       className={`relative rounded-2xl p-7 border flex flex-col ${
@@ -16,7 +19,7 @@ export default function PricingCard({ tier, price, period, description, features
     >
       {recommended && (
         <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#2563EB] text-white font-mono text-[10px] uppercase tracking-wider px-3 py-1 rounded-full">
-          Empfohlen
+          {t('pricingRecommended')}
         </div>
       )}
 
